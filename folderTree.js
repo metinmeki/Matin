@@ -6,7 +6,7 @@ function printFolderTree(dirPath, indent = "") {
 
   for (const item of items) {
     if (item.isDirectory()) {
-      console.log(indent + "📁 " + item.name);
+      console.log(indent + " " + item.name);
       const newPath = path.join(dirPath, item.name);
       printFolderTree(newPath, indent + "   ");
     }
@@ -15,5 +15,5 @@ function printFolderTree(dirPath, indent = "") {
 
 const rootFolder = path.join(__dirname, "src");
 
-console.log("📂 Folder Tree of 'src':\n");
+console.log(" Folder Tree of 'src':\n");
 printFolderTree(rootFolder);
