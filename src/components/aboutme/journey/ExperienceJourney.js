@@ -33,6 +33,25 @@ function ExperienceJourney() {
       </div>
 
       <VerticalTimeline>
+        {/* New Role: IT Specialist */}
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          contentStyle={{ background: "rgb(78 22 112)", color: "#fbd9ad" }}
+          contentArrowStyle={{ borderLeft: "7px solid  rgb(78 22 112)" }}
+          date="Sep 2025 – Present"
+          iconStyle={{ background: "rgb(78 22 112)", color: "#fbd9ad" }}
+          icon={<PersonIcon />}
+        >
+          <h5 className="vertical-timeline-element-title">IT Specialist</h5>
+          <h6 className="vertical-timeline-element-subtitle mt-2">Nawroz University · Duhok, Iraq</h6>
+          <ul>
+            <li>Provided technical support and troubleshooting for faculty and staff systems.</li>
+            <li>Maintained and optimized campus networks, servers, and IT infrastructure.</li>
+            
+          </ul>
+        </VerticalTimelineElement>
+
+        {/* Existing Role: Freelance */}
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
           contentStyle={{ background: "rgb(78 22 112)", color: "#fbd9ad" }}
@@ -51,6 +70,7 @@ function ExperienceJourney() {
           </ul>
         </VerticalTimelineElement>
 
+        {/* Existing Role: Open Source */}
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
           contentStyle={{ background: "rgb(78 22 112)", color: "#fbd9ad" }}

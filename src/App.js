@@ -3,34 +3,35 @@ import React, { useState, useEffect } from "react";
 import "./style.css";
 import "react-vertical-timeline-component/style.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import Preloader from "./Preloader";
 import MyNav from "./components/navbar/MyNav";
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+
 import Home from "./pages/home_page/HomePage";
 import Resume from "./pages/resume_page/ResumePage";
 import ProjectPage from "./pages/project_page/ProjectPage";
-import Footer from "./components/footer/Footer";
+import CertificatePage from "./pages/certificate_page/CertificatePage";
+import ComingSoon from "./pages/comingsoon_page/comingsoon";
+import Notfound from "./pages/blogs_page/notfound";
+
 import About from "./components/aboutme/about/About";
 import Ranking from "./components/aboutme/ranking/Ranking";
 import EducationJourney from "./components/aboutme/journey/EducationJourney";
 import ExperienceJourney from "./components/aboutme/journey/ExperienceJourney";
-import CertificatePage from "./pages/certificate_page/CertificatePage";
-import PersonalSkill from "./components/aboutme/skills/PersonalSkill";
-import TechnicalSkill from "./components/aboutme/skills/TechnicalSkill";
-import ComingSoon from "./pages/comingsoon_page/comingsoon";
-import Notfound from "./pages/blogs_page/notfound";
 import TechnicalJourney from "./components/aboutme/journey/TechnicalJourney";
 import ProjectJourney from "./components/aboutme/journey/ProjectJourney";
-import SocialMedia from "./components/aboutme/social_media/SocialMedia";
+import PersonalSkill from "./components/aboutme/skills/PersonalSkill";
+import TechnicalSkill from "./components/aboutme/skills/TechnicalSkill";
 import Toolkit from "./components/aboutme/skills/Toolkit";
+import SocialMedia from "./components/aboutme/social_media/SocialMedia";
+import Footer from "./components/footer/Footer";
 
 function App() {
   const [load, updateLoad] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      updateLoad(false);
-    }, 4000);
+    const timer = setTimeout(() => updateLoad(false), 4000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -40,7 +41,7 @@ function App() {
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <MyNav />
         <Routes>
-          {/* Home page with nested routes */}
+          {/* Home page nested routes */}
           <Route path="/" element={<Home />}>
             <Route index element={<About />} />
             <Route path="personalskill" element={<PersonalSkill />} />
