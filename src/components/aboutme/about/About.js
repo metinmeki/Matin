@@ -24,7 +24,7 @@ const About = () => {
           <Col md={7}>
             <Fade duration={3000}>
               <p className="home-about-body">
-                Hi! I am <b className="purple">Metin Meki</b>, an <b className="purple">AI & Web Developer, IT Specialist, Data Scientist, and Kaggle Expert</b>. 
+                Hi ! I am <b className="purple">Metin Meki</b>, an <b className="purple">AI & Web Developer, IT Specialist, Data Scientist, and Kaggle Expert</b>. 
                 <br />
                 <br />
                 I am proficient in programming languages such as &nbsp;
