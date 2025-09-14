@@ -14,7 +14,6 @@ import { FaLinkedinIn, FaGoogle } from "react-icons/fa";
 import Certification from "../../components/certificatee/Certificate";
 import Projects from "../../components/projects/Projects";
 import Contactus from "../../components/contactus/Contactus";
-import { Outlet } from "react-router-dom";
 import profile from "../../images/profile.png";
 
 export default function Home() {
@@ -31,7 +30,7 @@ export default function Home() {
               >
                 Hi There!{" "}
                 <span className="wave" role="img" aria-labelledby="wave">
-                  👋🏻
+                  ✋🏻
                 </span>
               </h1>
 
@@ -57,7 +56,7 @@ export default function Home() {
                   </li>
                   <li className="socialicons">
                     <a
-                      href="https://www.linkedin.com/in/metin-amedi-2b6b74326/"
+                      href="https://www.linkedin.com/in/matin-maki-2b6b74326/"
                       target="_blank"
                       rel="noreferrer"
                       className="iconcolour homesocialicons"
@@ -116,11 +115,11 @@ export default function Home() {
         </Container>
       </Container>
 
+      {/* Sections */}
       <AboutmeContainer />
       <Certification />
       <Projects />
       <Contactus />
-      <Outlet />
     </section>
   );
 }
