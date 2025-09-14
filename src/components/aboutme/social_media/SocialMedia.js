@@ -44,7 +44,7 @@ export default function SocialMedia() {
           </Col>
           <Col md={2}>
             <a
-              href="https://www.linkedin.com/in/metin-amedi-2b6b74326/"
+              href="https://www.linkedin.com/in/matin-maki-2b6b74326/"
               target="_blank"
               rel="noreferrer"
               className="icon-colour home-social-icons"
