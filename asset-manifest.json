@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/Matin/static/css/main.01516886.css",
+    "main.js": "/Matin/static/js/main.2ed5e188.js",
+    "static/media/spineclassification.png": "/Matin/static/media/spineclassification.cf2d5ac200d7c0c1dca5.png",
+    "static/media/EnglishforIT1.jpg": "/Matin/static/media/EnglishforIT1.35453bb54d119b6f0b57.jpg",
+    "static/media/IntrotoModernAI.jpg": "/Matin/static/media/IntrotoModernAI.8616b9ea4b3d61320d6e.jpg",
+    "static/media/IntrotoDataScienceUpdate.jpg": "/Matin/static/media/IntrotoDataScienceUpdate.917a8a24596f89430981.jpg",
+    "static/media/profile.png": "/Matin/static/media/profile.6e9b8628bdf5a0fc282f.png",
+    "static/media/hplifee.jpg": "/Matin/static/media/hplifee.f61494cc61ecfc10f702.jpg",
+    "static/media/healythplant.png": "/Matin/static/media/healythplant.3c63d1f69ae07e2ce0dd.png",
+    "static/media/teachforeveryone.png": "/Matin/static/media/teachforeveryone.3ce6a5699ffc5cc2c467.png",
+    "static/media/drowing.jpg": "/Matin/static/media/drowing.09d22ad1126667b4e8b0.jpg",
+    "static/media/thermalHumanDetection.jpg": "/Matin/static/media/thermalHumanDetection.6af8c16cdbb787c7d3eb.jpg",
+    "static/media/nawroz uni cer.jpg": "/Matin/static/media/nawroz uni cer.e065c729d7eb19c4d1df.jpg",
+    "static/media/handdigi.png": "/Matin/static/media/handdigi.24b4fd764edf2dc3600c.png",
+    "static/media/aiparking.jpg": "/Matin/static/media/aiparking.ff7795458613683a359a.jpg",
+    "static/media/MetinMeki.pdf": "/Matin/static/media/MetinMeki.bf549bd5962da4e0233d.pdf",
+    "static/media/titanic.jpeg": "/Matin/static/media/titanic.a27ad761f83be0898eff.jpeg",
+    "static/media/game development with js.jpg": "/Matin/static/media/game development with js.581d6095cacd10f0c4c4.jpg",
+    "static/media/eye tracking.jpg": "/Matin/static/media/eye tracking.9389722c87e7f348291b.jpg",
+    "static/media/python.jpg": "/Matin/static/media/python.8502c4721b319251150b.jpg",
+    "static/media/machine learning explainability kaggle.jpg": "/Matin/static/media/machine learning explainability kaggle.19643dcd5cba95186675.jpg",
+    "static/media/intro to machine learning kaggle.jpg": "/Matin/static/media/intro to machine learning kaggle.28037450c9b1d43d065b.jpg",
+    "static/media/e-commerce.png": "/Matin/static/media/e-commerce.aefc4428342dd5f68275.png",
+    "static/media/intro to programming kaggle.jpg": "/Matin/static/media/intro to programming kaggle.2b54d641b504ea7f1252.jpg",
+    "static/media/Diabetes.jpg": "/Matin/static/media/Diabetes.f89fffc10a194ce54339.jpg",
+    "static/media/pre.svg": "/Matin/static/media/pre.e4c81c26304bc309eb55.svg",
+    "static/media/h3.jpg": "/Matin/static/media/h3.dc52d5d40a40b13154b0.jpg",
+    "static/media/firedetection.jpeg": "/Matin/static/media/firedetection.8fe4058464fbafae1d62.jpeg",
+    "static/media/handwrite digit.jpeg": "/Matin/static/media/handwrite digit.dcbc540f0a6a802ea320.jpeg",
+    "static/media/braintumor.jpg": "/Matin/static/media/braintumor.c2c1b52df1c60b7ef635.jpg",
+    "index.html": "/Matin/index.html",
+    "main.01516886.css.map": "/Matin/static/css/main.01516886.css.map",
+    "main.2ed5e188.js.map": "/Matin/static/js/main.2ed5e188.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.01516886.css",
+    "static/js/main.2ed5e188.js"
+  ]
+}
