@@ -84,7 +84,7 @@ function EducationJourney() {
             SELF-STUDY & ADVANCED LEARNING
           </h4>
           <h4 className="vertical-timeline-element-subtitle mt-2">
-            Online Platforms (SoloLearn,Udemy, Kaggle, Cisco Academy,Data Camp,HP Life)
+            Online Platforms (SoloLearn,Udemy, Kaggle, Cisco Academy,Data Camp,HP Life,Coursera)
           </h4>
           <p>
             Engaged in deep learning, machine learning, and web development through open courses and real-world projects.
