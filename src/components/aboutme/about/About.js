@@ -28,7 +28,7 @@ const About = () => {
                 <br />
                 <br />
                 I am proficient in programming languages such as &nbsp;
-                <b className="purple">C#, Python, HTML, CSS, and JavaScript</b>.
+                <b className="purple">C#, PHP, Python, HTML, CSS, and JavaScript</b>.
                 <br />
                 <br />
                 I also have experience with frameworks and libraries like &nbsp;
