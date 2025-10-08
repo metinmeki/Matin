@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Slide from "react-reveal/Slide";
-import Fade from "react-reveal/Fade";
+import Fade from "react-reveal/Fade";;
 
 const About = () => {
   return (
