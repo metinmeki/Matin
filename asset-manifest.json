@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Matin/static/css/main.01516886.css",
-    "main.js": "/Matin/static/js/main.2ed5e188.js",
+    "main.js": "/Matin/static/js/main.62d782f7.js",
     "static/media/spineclassification.png": "/Matin/static/media/spineclassification.cf2d5ac200d7c0c1dca5.png",
     "static/media/EnglishforIT1.jpg": "/Matin/static/media/EnglishforIT1.35453bb54d119b6f0b57.jpg",
     "static/media/IntrotoModernAI.jpg": "/Matin/static/media/IntrotoModernAI.8616b9ea4b3d61320d6e.jpg",
@@ -32,10 +32,10 @@
     "static/media/braintumor.jpg": "/Matin/static/media/braintumor.c2c1b52df1c60b7ef635.jpg",
     "index.html": "/Matin/index.html",
     "main.01516886.css.map": "/Matin/static/css/main.01516886.css.map",
-    "main.2ed5e188.js.map": "/Matin/static/js/main.2ed5e188.js.map"
+    "main.62d782f7.js.map": "/Matin/static/js/main.62d782f7.js.map"
   },
   "entrypoints": [
     "static/css/main.01516886.css",
-    "static/js/main.2ed5e188.js"
+    "static/js/main.62d782f7.js"
   ]
 }
