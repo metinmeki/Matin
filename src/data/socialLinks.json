@@ -1,0 +1,27 @@
+[
+  {
+    "platform": "instagram",
+    "url": "https://www.instagram.com/metin_amedi?igsh=N3lncThuaGN4MjB3&utm_source=qr",
+    "enabled": true
+  },
+  {
+    "platform": "github",
+    "url": "https://github.com/metinmeki",
+    "enabled": true
+  },
+  {
+    "platform": "linkedin",
+    "url": "https://www.linkedin.com/in/matin-maki-2b6b74326/",
+    "enabled": true
+  },
+  {
+    "platform": "youtube",
+    "url": "https://www.youtube.com/@metinmeki",
+    "enabled": true
+  },
+  {
+    "platform": "email",
+    "url": "mailto:metinmeki99@gmail.com",
+    "enabled": true
+  }
+]

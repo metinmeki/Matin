@@ -26,6 +26,7 @@ import TechnicalSkill from "./components/aboutme/skills/TechnicalSkill";
 import Toolkit from "./components/aboutme/skills/Toolkit";
 import SocialMedia from "./components/aboutme/social_media/SocialMedia";
 import Footer from "./components/footer/Footer";
+import Admin from "./admin/Admin";
 
 function App() {
   const [load, updateLoad] = useState(true);
@@ -60,6 +61,11 @@ function App() {
           <Route path="/certificateepage" element={<CertificatePage />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/blogs" element={<ComingSoon />} />
+
+          {/* Local dev-only content admin — stripped from production builds */}
+          {process.env.NODE_ENV !== "production" && (
+            <Route path="/admin" element={<Admin />} />
+          )}
 
           {/* Catch-all 404 */}
           <Route path="*" element={<Notfound />} />

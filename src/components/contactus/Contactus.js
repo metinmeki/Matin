@@ -1,14 +1,16 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Zoom from "react-reveal/Zoom";
-import axios from "axios";
 import { useState } from "react";
 import { AiOutlineSend } from "react-icons/ai";
 import { FiPhone, FiAtSign } from "react-icons/fi";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 
+const WEB3FORMS_ACCESS_KEY = process.env.REACT_APP_WEB3FORMS_ACCESS_KEY;
+
 export default function Contactus() {
-  const [formData, setFormData] = useState(new FormData());
+  const [formData, setFormData] = useState({});
+  const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,25 +20,44 @@ export default function Contactus() {
     e.preventDefault();
 
     if (!(formData.name && formData.email && formData.message)) {
-      alert("Something went wrong!");
+      alert("Please fill in your name, email, and message.");
       return;
     }
 
-    try {
-      const response = await axios.post(
-        "http://localhost:5000/api/submitForm",
-        formData
+    if (!WEB3FORMS_ACCESS_KEY) {
+      alert(
+        "Contact form isn't configured yet: missing REACT_APP_WEB3FORMS_ACCESS_KEY."
       );
-      console.log(response.data.message); // Log the response from the backend
-
-      alert(`Thanks ${formData.name}, I will shortly connect with you!`);
-    } catch (error) {
-      console.error("Error submitting the form:", error);
-
-      alert("Backend Server was not Running while submitting the form.");
+      return;
     }
 
-    setFormData({});
+    setSubmitting(true);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `New portfolio message from ${formData.name}`,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+      const result = await response.json();
+
+      if (result.success) {
+        alert(`Thanks ${formData.name}, I will shortly connect with you!`);
+        setFormData({});
+      } else {
+        alert("Something went wrong sending your message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting the form:", error);
+      alert("Something went wrong sending your message. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -107,8 +128,9 @@ export default function Contactus() {
                           type="submit"
                           className="submitBtn"
                           onClick={handleSubmit}
+                          disabled={submitting}
                         >
-                          Submit
+                          {submitting ? "Sending..." : "Submit"}
                           <AiOutlineSend className="send-icon" />
                         </button>
                       </div>

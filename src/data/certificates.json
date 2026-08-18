@@ -1,0 +1,68 @@
+[
+  {
+    "id": "python-certificate",
+    "image": "python.jpg",
+    "alt": "Python Certificate",
+    "caption": "Python Certificate"
+  },
+  {
+    "id": "english-for-it",
+    "image": "EnglishforIT1.jpg",
+    "alt": "English for IT Certificate",
+    "caption": "English for IT"
+  },
+  {
+    "id": "intro-data-science",
+    "image": "IntrotoDataScienceUpdate.jpg",
+    "alt": "Intro to Data Science Certificate",
+    "caption": "Intro to Data Science"
+  },
+  {
+    "id": "intro-modern-ai",
+    "image": "IntrotoModernAI.jpg",
+    "alt": "Intro to Modern AI Certificate",
+    "caption": "Intro to Modern AI"
+  },
+  {
+    "id": "ml-explainability-kaggle",
+    "image": "machine learning explainability kaggle.jpg",
+    "alt": "Machine Learning Explainability - Kaggle",
+    "caption": "ML Explainability (Kaggle)"
+  },
+  {
+    "id": "intro-programming-kaggle",
+    "image": "intro to programming kaggle.jpg",
+    "alt": "Intro to Programming - Kaggle",
+    "caption": "Intro to Programming (Kaggle)"
+  },
+  {
+    "id": "intro-ml-kaggle",
+    "image": "intro to machine learning kaggle.jpg",
+    "alt": "Intro to Machine Learning - Kaggle",
+    "caption": "Intro to Machine Learning (Kaggle)"
+  },
+  {
+    "id": "game-dev-js",
+    "image": "game development with js.jpg",
+    "alt": "Game Development with JS",
+    "caption": "Game Dev with JS"
+  },
+  {
+    "id": "hp-life",
+    "image": "hplifee.jpg",
+    "alt": "HP Life Certificate",
+    "caption": "HP Life"
+  },
+  {
+    "id": "teach-for-everyone",
+    "image": "teachforeveryone.png",
+    "alt": "Teach for Everyone Certificate",
+    "caption": "Teach for Everyone"
+  },
+  {
+    "id": "nawroz-university",
+    "image": "nawroz uni cer.jpg",
+    "alt": "Nawroz University Certificate",
+    "caption": "Nawroz University"
+  }
+]

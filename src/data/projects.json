@@ -1,0 +1,168 @@
+[
+  {
+    "id": "fire-detection",
+    "title": "Fire Detection",
+    "image": "firedetection.jpeg",
+    "githubUrl": "https://github.com/metinmeki/Fire-Detection-AI",
+    "description": "Fire Detection AI is a real-time fire detection system leveraging the power of the YOLO (You Only Look Once) algorithm. It analyzes video streams or images to detect fire quickly and accurately, enabling timely alerts to help prevent fire-related disasters.",
+    "techStack": [
+      "OpenCV",
+      "TensorFlow",
+      "NumPy"
+    ],
+    "featured": true
+  },
+  {
+    "id": "titanic-survival-analysis",
+    "title": "Titanic Survival Analysis",
+    "image": "titanic.jpeg",
+    "githubUrl": "https://www.kaggle.com/code/metinmekiabullrahman/titanic-survival-analysis",
+    "description": "Data analysis and prediction of Titanic passenger survival using ML techniques.",
+    "techStack": [
+      "Pandas",
+      "Seaborn",
+      "Logistic Regression",
+      "Python"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thermal-human-detection",
+    "title": "Thermal Human Detection",
+    "image": "thermalHumanDetection.jpg",
+    "githubUrl": "",
+    "description": "This AI project detects human presence in thermal images or infrared video streams using deep learning models. It enhances security and surveillance by accurately identifying human silhouettes in low-light or complete darkness.",
+    "techStack": [
+      "YOLOv8",
+      "OpenCV",
+      "Python"
+    ],
+    "featured": false
+  },
+  {
+    "id": "plant-health-detection",
+    "title": "Plant Health Detection",
+    "image": "healythplant.png",
+    "githubUrl": "",
+    "description": "A smart AI system that classifies the health status of plants by analyzing images of their leaves. It helps in early disease detection and suggests potential treatments using deep learning models.",
+    "techStack": [
+      "YOLOV10",
+      "Keras",
+      "OpenCV",
+      "Python"
+    ],
+    "featured": false
+  },
+  {
+    "id": "aa-online-shopping",
+    "title": "AA Online Shopping",
+    "image": "e-commerce.png",
+    "githubUrl": "https://github.com/metinmeki/AA_Online_Shoping",
+    "description": "An Online Shopping System that allows users to browse products, add items to cart, and place secure orders. It supports user authentication, product search, order tracking, and inventory management. The platform also features an integrated chat support system for real-time customer assistance and inquiries.",
+    "techStack": [
+      "CSS",
+      "JavaScript",
+      "SCSS"
+    ],
+    "featured": true
+  },
+  {
+    "id": "eye-tracking-mouse-control",
+    "title": "Eye Tracking Mouse control AI",
+    "image": "eye tracking.jpg",
+    "githubUrl": "https://github.com/metinmeki/Eye-Tracking-AI",
+    "description": "Real-time eye tracking system using MediaPipe, OpenCV, and Python to control screen with gaze.",
+    "techStack": [
+      "MediaPipe",
+      "OpenCV",
+      "Python",
+      "PyAutoGUI"
+    ],
+    "featured": false
+  },
+  {
+    "id": "handwritten-digit-recognition-voice",
+    "title": "Handwritten Digit Recognition with Voice",
+    "image": "handwrite digit.jpeg",
+    "githubUrl": "https://github.com/metinmeki/Handwritten-Digit-Recognition-With-Voice-",
+    "description": "This project is a browser-based AI application that recognizes handwritten digits drawn on a canvas using a trained neural network with TensorFlow.js. It provides real-time voice feedback, progress bar visualization, and is fully responsive on desktop and mobile devices.",
+    "techStack": [
+      "Python",
+      "CNN",
+      "HTML",
+      "CSS",
+      "JS",
+      "TensorFlow.js"
+    ],
+    "featured": true
+  },
+  {
+    "id": "brain-tumor-classification",
+    "title": "Brain Tumor Classification",
+    "image": "braintumor.jpg",
+    "githubUrl": "https://github.com/metinmeki/Brain-Tumor-Classification",
+    "description": "GUI app using CNN & Grad-CAM to detect brain tumors.",
+    "techStack": [
+      "TensorFlow",
+      "Tkinter",
+      "Python",
+      "CNN"
+    ],
+    "featured": false
+  },
+  {
+    "id": "spine-disease-classification",
+    "title": "Spine Disease Classification",
+    "image": "spineclassification.png",
+    "githubUrl": "",
+    "description": "Detects spine conditions using machine learning.",
+    "techStack": [
+      "Scikit-learn",
+      "Pandas",
+      "Resnet50",
+      "Python",
+      "Flask Framework"
+    ],
+    "featured": false
+  },
+  {
+    "id": "hand-digit-classifier",
+    "title": "Hand Digit Classifier",
+    "image": "handdigi.png",
+    "githubUrl": "https://github.com/metinmeki/Hand-Digit-Classifier",
+    "description": "Real-time digit classification using OpenCV + CNN.",
+    "techStack": [
+      "OpenCV",
+      "Python",
+      "Keras"
+    ],
+    "featured": false
+  },
+  {
+    "id": "ai-parking-detection",
+    "title": "AI Parking Detection",
+    "image": "aiparking.jpg",
+    "githubUrl": "",
+    "description": "Real-time parking space detection using YOLOv8 to identify free spots from CCTV video streams with OpenCV and Python.",
+    "techStack": [
+      "YOLOv8",
+      "OpenCV",
+      "Python",
+      "Flask"
+    ],
+    "featured": false
+  },
+  {
+    "id": "drawing-swimming-project",
+    "title": "Drawing and Swimming Project",
+    "image": "drowing.jpg",
+    "githubUrl": "",
+    "description": "AI system to detect if a person is drowning or swimming in real-time video.",
+    "techStack": [
+      "Python",
+      "YOLOV8",
+      "OpenCV"
+    ],
+    "featured": false
+  }
+]
