@@ -5,10 +5,12 @@ import { Fade } from "react-reveal";
 import { FaCode } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { HiArrowRight } from "react-icons/hi";
-import projects from "../../data/projects.json";
+import projectsFallback from "../../data/projects.json";
 import { resolveImage } from "../../data/imageMap";
+import useContent from "../../hooks/useContent";
 
 export default function Projects() {
+  const projects = useContent("projects", projectsFallback);
   const featuredProjects = projects.filter((project) => project.featured);
 
   return (

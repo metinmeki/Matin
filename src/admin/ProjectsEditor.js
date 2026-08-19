@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { FiPlus, FiTrash2, FiSave, FiCheck, FiAlertCircle } from "react-icons/fi";
+import { FiPlus, FiTrash2, FiSave, FiCheck, FiAlertCircle, FiUpload } from "react-icons/fi";
 import projectsData from "../data/projects.json";
 import { resolveImage } from "../data/imageMap";
-import { saveData } from "./adminSave";
+import { saveData, uploadImage } from "./adminSave";
 
 function blankProject() {
   return {
@@ -19,9 +19,23 @@ function blankProject() {
 export default function ProjectsEditor() {
   const [projects, setProjects] = useState(() => JSON.parse(JSON.stringify(projectsData)));
   const [status, setStatus] = useState(null);
+  const [uploadingIndex, setUploadingIndex] = useState(null);
 
   const updateField = (index, field, value) => {
     setProjects((prev) => prev.map((p, i) => (i === index ? { ...p, [field]: value } : p)));
+  };
+
+  const handleImageUpload = async (index, file) => {
+    if (!file) return;
+    setUploadingIndex(index);
+    try {
+      const path = await uploadImage(file);
+      updateField(index, "image", path);
+    } catch (err) {
+      setStatus(`error: ${err.message}`);
+    } finally {
+      setUploadingIndex(null);
+    }
   };
 
   const removeProject = (index) => {
@@ -45,8 +59,8 @@ export default function ProjectsEditor() {
   return (
     <div>
       <div className="admin-notice">
-        New or changed images go in <code>public/images/</code> — reference
-        them here by filename (e.g. <code>my-project.png</code>).
+        Upload an image directly on each project below, or type an existing
+        filename to reuse one already on the site.
       </div>
 
       <div className="admin-toolbar">
@@ -102,11 +116,27 @@ export default function ProjectsEditor() {
               </div>
               <div className="admin-field">
                 <label>Image filename</label>
-                <input
-                  className="admin-input"
-                  value={project.image}
-                  onChange={(e) => updateField(index, "image", e.target.value)}
-                />
+                <div style={{ display: "flex", gap: "0.4rem" }}>
+                  <input
+                    className="admin-input"
+                    value={project.image}
+                    onChange={(e) => updateField(index, "image", e.target.value)}
+                  />
+                  <label
+                    className="admin-btn admin-btn-ghost"
+                    style={{ cursor: "pointer", padding: "0.45rem 0.6rem" }}
+                    title="Upload image"
+                  >
+                    {uploadingIndex === index ? "…" : <FiUpload />}
+                    <input
+                      type="file"
+                      accept="image/*"
+                      style={{ display: "none" }}
+                      disabled={uploadingIndex === index}
+                      onChange={(e) => handleImageUpload(index, e.target.files[0])}
+                    />
+                  </label>
+                </div>
               </div>
               <div className="admin-field">
                 <label>GitHub URL</label>

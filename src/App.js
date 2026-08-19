@@ -62,10 +62,9 @@ function App() {
           <Route path="/resume" element={<Resume />} />
           <Route path="/blogs" element={<ComingSoon />} />
 
-          {/* Local dev-only content admin — stripped from production builds */}
-          {process.env.NODE_ENV !== "production" && (
-            <Route path="/admin" element={<Admin />} />
-          )}
+          {/* Content admin — auth is enforced server-side (Nginx auth_basic
+              in production, trusted-by-default in local dev) */}
+          <Route path="/admin" element={<Admin />} />
 
           {/* Catch-all 404 */}
           <Route path="*" element={<Notfound />} />

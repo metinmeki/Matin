@@ -3,10 +3,12 @@ import { Container, Row, Col } from "react-bootstrap";
 import Zoom from "react-reveal/Zoom";
 import { Fade } from "react-reveal";
 import { FaCode } from "react-icons/fa";
-import projects from "../../data/projects.json";
+import projectsFallback from "../../data/projects.json";
 import { resolveImage } from "../../data/imageMap";
+import useContent from "../../hooks/useContent";
 
 export default function Projects() {
+  const projects = useContent("projects", projectsFallback);
   return (
     <div>
       <Container fluid className="certificate-section" id="about">

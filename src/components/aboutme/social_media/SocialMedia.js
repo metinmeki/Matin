@@ -8,7 +8,8 @@ import {
 } from "react-icons/ai";
 import { Container, Row, Col } from "react-bootstrap";
 import Zoom from "react-reveal/Zoom";
-import socialLinks from "../../../data/socialLinks.json";
+import socialLinksFallback from "../../../data/socialLinks.json";
+import useContent from "../../../hooks/useContent";
 
 const iconByPlatform = {
   instagram: AiOutlineInstagram,
@@ -19,6 +20,7 @@ const iconByPlatform = {
 };
 
 export default function SocialMedia() {
+  const socialLinks = useContent("socialLinks", socialLinksFallback);
   return (
     <div className="mt-4">
       <Zoom left cascade>

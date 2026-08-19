@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {
   FiLock,
+  FiUser,
   FiLogOut,
   FiExternalLink,
   FiFolder,
@@ -13,13 +14,10 @@ import SocialLinksEditor from "./SocialLinksEditor";
 import projectsData from "../data/projects.json";
 import certificatesData from "../data/certificates.json";
 import socialLinksData from "../data/socialLinks.json";
+import { verifyLogin, clearAuthHeader } from "./adminSave";
 import "./admin.css";
 
-// Not real security: this only gates casual access to the local dev-only
-// content editor. The whole /admin route is stripped from production
-// builds (see App.js), so this password never ships to the public site.
-const ADMIN_PASSWORD = process.env.REACT_APP_ADMIN_PASSWORD || "portfolio-admin";
-const SESSION_KEY = "adminAuthed";
+const AUTH_HEADER_KEY = "adminAuthHeader";
 
 const SECTIONS = [
   { key: "projects", label: "Projects", icon: FiFolder, count: projectsData.length },
@@ -28,16 +26,26 @@ const SECTIONS = [
 ];
 
 function LoginGate({ onSuccess }) {
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (password === ADMIN_PASSWORD) {
-      sessionStorage.setItem(SESSION_KEY, "true");
-      onSuccess();
-    } else {
+    setSubmitting(true);
+    setError(false);
+    try {
+      const ok = await verifyLogin(username, password);
+      if (ok) {
+        onSuccess();
+      } else {
+        setError(true);
+      }
+    } catch {
       setError(true);
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -51,7 +59,22 @@ function LoginGate({ onSuccess }) {
           <h2>Portfolio Admin</h2>
           <p className="admin-login-sub">Sign in to manage site content</p>
 
-          {error && <div className="admin-error">Incorrect password.</div>}
+          {error && <div className="admin-error">Incorrect username or password.</div>}
+
+          <div className="admin-login-field">
+            <FiUser size={15} />
+            <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => {
+                setUsername(e.target.value);
+                setError(false);
+              }}
+              autoFocus
+              autoComplete="username"
+            />
+          </div>
 
           <div className="admin-login-field">
             <FiLock size={15} />
@@ -63,12 +86,17 @@ function LoginGate({ onSuccess }) {
                 setPassword(e.target.value);
                 setError(false);
               }}
-              autoFocus
+              autoComplete="current-password"
             />
           </div>
 
-          <button type="submit" className="admin-btn admin-btn-primary" style={{ width: "100%", justifyContent: "center" }}>
-            Log In
+          <button
+            type="submit"
+            className="admin-btn admin-btn-primary"
+            style={{ width: "100%", justifyContent: "center" }}
+            disabled={submitting}
+          >
+            {submitting ? "Signing in..." : "Log In"}
           </button>
         </form>
       </div>
@@ -78,7 +106,7 @@ function LoginGate({ onSuccess }) {
 
 export default function Admin() {
   const [authed, setAuthed] = useState(
-    () => sessionStorage.getItem(SESSION_KEY) === "true"
+    () => !!sessionStorage.getItem(AUTH_HEADER_KEY)
   );
   const [active, setActive] = useState("projects");
 
@@ -87,7 +115,7 @@ export default function Admin() {
   }
 
   const handleLogout = () => {
-    sessionStorage.removeItem(SESSION_KEY);
+    clearAuthHeader();
     setAuthed(false);
   };
 
@@ -147,10 +175,8 @@ export default function Admin() {
                 <span className="admin-badge">{activeSection.count} items</span>
               </h2>
               <p>
-                Changes save to the JSON files in <code>src/data/</code> via
-                the local dev server. This page only exists while{" "}
-                <code>npm start</code> is running — it is not part of the
-                production build.
+                Changes save immediately and appear on the live site on next
+                page load — no rebuild needed.
               </p>
             </div>
           </div>

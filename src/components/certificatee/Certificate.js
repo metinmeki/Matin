@@ -1,10 +1,12 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Fade from "react-reveal/Fade";
-import certificates from "../../data/certificates.json";
+import certificatesFallback from "../../data/certificates.json";
 import { resolveImage } from "../../data/imageMap";
+import useContent from "../../hooks/useContent";
 
 export default function CertificatePage() {
+  const certificates = useContent("certificates", certificatesFallback);
   return (
     <div className="mt-5">
       <Container>

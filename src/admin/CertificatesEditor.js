@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { FiPlus, FiTrash2, FiSave, FiCheck, FiAlertCircle } from "react-icons/fi";
+import { FiPlus, FiTrash2, FiSave, FiCheck, FiAlertCircle, FiUpload } from "react-icons/fi";
 import certificatesData from "../data/certificates.json";
 import { resolveImage } from "../data/imageMap";
-import { saveData } from "./adminSave";
+import { saveData, uploadImage } from "./adminSave";
 
 function blankCertificate() {
   return {
@@ -18,9 +18,23 @@ export default function CertificatesEditor() {
     JSON.parse(JSON.stringify(certificatesData))
   );
   const [status, setStatus] = useState(null);
+  const [uploadingIndex, setUploadingIndex] = useState(null);
 
   const updateField = (index, field, value) => {
     setCertificates((prev) => prev.map((c, i) => (i === index ? { ...c, [field]: value } : c)));
+  };
+
+  const handleImageUpload = async (index, file) => {
+    if (!file) return;
+    setUploadingIndex(index);
+    try {
+      const path = await uploadImage(file);
+      updateField(index, "image", path);
+    } catch (err) {
+      setStatus(`error: ${err.message}`);
+    } finally {
+      setUploadingIndex(null);
+    }
   };
 
   const removeCertificate = (index) => {
@@ -44,8 +58,8 @@ export default function CertificatesEditor() {
   return (
     <div>
       <div className="admin-notice">
-        New or changed images go in <code>public/images/</code> — reference
-        them here by filename.
+        Upload an image directly on each certificate below, or type an
+        existing filename to reuse one already on the site.
       </div>
 
       <div className="admin-toolbar">
@@ -91,11 +105,27 @@ export default function CertificatesEditor() {
             <div className="admin-item-fields">
               <div className="admin-field">
                 <label>Image filename</label>
-                <input
-                  className="admin-input"
-                  value={cert.image}
-                  onChange={(e) => updateField(index, "image", e.target.value)}
-                />
+                <div style={{ display: "flex", gap: "0.4rem" }}>
+                  <input
+                    className="admin-input"
+                    value={cert.image}
+                    onChange={(e) => updateField(index, "image", e.target.value)}
+                  />
+                  <label
+                    className="admin-btn admin-btn-ghost"
+                    style={{ cursor: "pointer", padding: "0.45rem 0.6rem" }}
+                    title="Upload image"
+                  >
+                    {uploadingIndex === index ? "…" : <FiUpload />}
+                    <input
+                      type="file"
+                      accept="image/*"
+                      style={{ display: "none" }}
+                      disabled={uploadingIndex === index}
+                      onChange={(e) => handleImageUpload(index, e.target.files[0])}
+                    />
+                  </label>
+                </div>
               </div>
               <div className="admin-field">
                 <label>Caption</label>

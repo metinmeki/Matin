@@ -29,6 +29,7 @@ export function resolveImage(imagePath) {
   if (!imagePath) return "";
   if (imageMap[imagePath]) return imageMap[imagePath];
   if (/^https?:\/\//.test(imagePath)) return imagePath;
+  if (imagePath.startsWith("uploads/")) return `/${imagePath}`;
   return `${process.env.PUBLIC_URL}/images/${imagePath}`;
 }
 
